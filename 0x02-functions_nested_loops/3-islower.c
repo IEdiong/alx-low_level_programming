@@ -6,11 +6,9 @@
  *
  * Return: 1 if character is lowercase. 0 Otherwise.
  */
-int _islower(int c)
+int _islower(char c)
 {
-	int i = _putchar(c + '0');
-
-	if (i >= 97 && i <= 122)
+	if (i >= 'a' && i <= 'z')
 		return (1);
 	else
 		return (0);
