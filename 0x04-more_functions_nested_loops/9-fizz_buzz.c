@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main - Fizz-Buzz test
@@ -30,7 +31,8 @@ int main(void)
 		}
 
 		if (num != 100)
-			printf(" ");
+			_putchar(32);
 	}
+	_putchar('\n');
 	return (0);
 }
