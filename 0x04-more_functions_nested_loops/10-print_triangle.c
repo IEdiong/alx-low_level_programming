@@ -3,11 +3,13 @@
 /**
  * print_triangle - prints a triangle
  * @size: size of the triangle
+ *
+ *
  */
 
 void print_triangle(int size)
 {
-	int v, h, spc, dist;
+	int v, h, margin, dis;
 
 	if (size <= 0)
 	{
@@ -15,17 +17,17 @@ void print_triangle(int size)
 		return;
 	}
 
-	dist = size - 1
+	dis = size - 1
 	for (v = 0 ; v < size ; v++)
 	{
-		spc = 0;
-		while (spc < (dist - 1))
+		margin = 0;
+		while (margin < (dis - 1))
 		{
 			_putchar(32);
-			spc++;
+			margin++;
 		}
 
-		h = size - spc;
+		h = size - margin;
 
 		while (h > 0)
 		{
