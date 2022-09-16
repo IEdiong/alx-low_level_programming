@@ -11,7 +11,7 @@ void print_triangle(int size)
 
 	if (size <= 0)
 	{
-		_putchar(32);
+		_putchar('\n');
 		return;
 	}
 
@@ -29,7 +29,7 @@ void print_triangle(int size)
 
 		while (h > 0)
 		{
-			_putchar(35);
+			_putchar('#');
 			h--;
 		}
 		_putchar('\n');
