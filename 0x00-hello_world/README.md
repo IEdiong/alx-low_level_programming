@@ -56,7 +56,7 @@ gcc $CFILE -o cisfun
 Actual solution in [3-name](./3-name)
 
 ## 4. Hello, puts
-A C program that uses `puts` to print out to stdout the string `"Programming is like building a multilingual puzzle` followed by a new line.
+A C program that uses `puts` to print to stdout the string `"Programming is like building a multilingual puzzle` followed by a new line.
 
 ```
 puts("\"Programming is like building a multilingual puzzle")
@@ -66,3 +66,13 @@ puts("\"Programming is like building a multilingual puzzle")
 
 Actual solution in [4-puts.c](./4-puts.c)
 
+## 5. Hello, printf
+A C program that uses `printf` to print to stdout the string `with proper grammar, but the outcome is a piece of art,` followed by a new line.
+
+```
+printf("with proper grammar, but the outcome is a piece of art,\n")
+
+// Note that the printf function does not print out a new line automatically, you have to ask it to do so.
+```
+
+Actual solution in [5-printf.c](./5-printf.c)
