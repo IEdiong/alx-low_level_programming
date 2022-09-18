@@ -46,7 +46,7 @@ Warnings are diagnostic messages that report constructions which are not inheren
 
 The following are some of the options that we would be turning on while compiling our C program:
 
-- `-pedantic`
+1. `-pedantic`
 : Issue all the warnings demanded by strict **ISO C** and **ISO C++**; reject all programs that use forbidden extensions, and some other programs that do not follow ISO C and ISO C++. For ISO C, follows the version of the ISO C standard specified by any `-std` option used.
 
 Valid ISO C and ISO C++ programs should compile properly with or without this option (though a rare few will require `-ansi` or a `-std` option specifying the required version of ISO C). However, without this option, certain GNU extensions and traditional C and C++ features are supported as well. With this option, they are rejected.
@@ -59,8 +59,30 @@ A feature to report any failure to conform to ISO C might be useful in some inst
 
 Where the standard specified with **-std** represents a GNU extended dialect of C, such as `gnu89` or `gnu99`, there is a corresponding base standard, the version of ISO C on which the GNU extended dialect is based. Warnings from **-pedantic** are given where they are required by the base standard. (It would not make sense for such warnings to be given only for features not in the specified GNU C dialect, since by definition the GNU dialects of C include all features the compiler supports with the given option, and there would be nothing to warn about.)
 
-- `-Werror`
+2. `-Werror`
 : Make all warnings into errors.
 
-- `-Wextra`
+3. `-Wextra`
 : (This option used to be called **-W**. The older name is still supported, but the newer name is more descriptive.) Print extra warning messages for these events:
+- A function can return either with or without a value. (Falling off the end of the function body is considered returning without a value.) For example, this function would evoke such a warning:
+```
+foo (a)
+{
+	if (a > 0)
+		return a;
+}
+```
+- An expression-statement or the left-hand side of a comma expression contains no side effects. To suppress the warning, cast the unused expression to void. For example, an expression such as `x[i,j]` will cause a warning, but `x[(void)i,j]` will not.
+- An unsigned value is compared against zero with `<` or `>=`.
+- Storage-class specifiers like static are not the first things in a declaration. According to the C Standard, this usage is obsolescent.
+- If **-Wall** or **-Wunused** is also specified, warn about unused arguments.
+- A comparison between signed and unsigned values could produce an incorrect result when the signed value is converted to unsigned. (But don't warn if **-Wno-sign-compare** is also specified.)
+- An aggregate has an initializer which does not initialize all members. This warning can be independently controlled by `-Wmissing-field-initializers`.
+- A function parameter is declared without a type specifier in K&R-style functions:
+```
+               void foo(bar) { }
+```          
+- An empty body occurs in an `if' or `else' statement.
+- A pointer is compared against integer zero with `<`, `<=`, `>`, or `>=`.
+- A variable might be changed by `longjmp` or `vfork`.
+- Any of several floating-point events that often indicate errors, such as overflow, underflow, loss of precision, etc.
