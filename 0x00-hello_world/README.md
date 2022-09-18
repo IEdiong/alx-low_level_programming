@@ -16,7 +16,7 @@ gcc -E $CFILE -o c
 // the -o flag followed by the file name 'c', defines the name of the output file
 ```
 
-Actual solution in [0-preprocessor](/0-preprocessor)
+Actual solution in [0-preprocessor](./0-preprocessor)
 
 ## 1. Compiler
 A bash script that compiles C file but does not link it and outputs it into a file named the same as the C file, but with the extension `.o` instead of `.c`. Example: if the file is `main.c`, the output file should be `main.o`. 
@@ -28,6 +28,6 @@ gcc -c $CFILE
      └─⫸ tells the compiler not to link
 ```
 
-Actual solution in [1-compiler](/1-compiler)
+Actual solution in [1-compiler](./1-compiler)
 
 ## 2. Assembler
