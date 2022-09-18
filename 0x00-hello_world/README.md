@@ -54,3 +54,15 @@ gcc $CFILE -o cisfun
 ```
 
 Actual solution in [3-name](./3-name)
+
+## 4. Hello, puts
+A C program that uses `puts` to print out to stdout the string `"Programming is like building a multilingual puzzle` followed by a new line.
+
+```
+puts("\"Programming is like building a multilingual puzzle")
+
+// Note that the puts function automatically prints out a newline character at the end of the string.
+```
+
+Actual solution in [4-puts.c](./4-puts.c)
+
