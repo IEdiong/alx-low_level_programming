@@ -43,3 +43,14 @@ gcc -S $CFILE
 Actual solution in [2-assembler](./2-assembler)
 
 ## 3. Name
+A bash script that compiles C file to an executable and names the outputed file `cisfun`. 
+
+```
+gcc $CFILE -o cisfun
+     |      |    |
+     |      |    └─⫸ <output_file_name>
+     |      └─⫸ tells the compiler to rename the output file
+     └─⫸ shell variable, it holds a value
+```
+
+Actual solution in [3-name](./3-name)
