@@ -31,3 +31,15 @@ gcc -c $CFILE
 Actual solution in [1-compiler](./1-compiler)
 
 ## 2. Assembler
+A bash script that compiles C file to the assembly code and outputs it into a file named the same as the C file, but with the extension `.s` instead of `.c`. Example: if the file is `main.c`, the output file should be `main.s`. 
+
+```
+gcc -S $CFILE
+     |   |
+     |   └─⫸ shell variable, it holds a value
+     └─⫸ tells the compiler to generate assembly code
+```
+
+Actual solution in [2-assembler](./2-assembler)
+
+## 3. Name
