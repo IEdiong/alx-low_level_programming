@@ -8,24 +8,19 @@
 
 int _atoi(char *s)
 {
-	int sign = 1, base = 0, i = 0;
+	int sign = 1, res = 0, i = 0;
 
-	while (s[i] == ' ')
-		i++;
+	do {
+		while (*(s + i) == '-' || *(s + i) == '+')
+			sign = sign * (1 - 2 * (s[i++] == '-'));
 
-	if (s[i] == '-' || s[i] == '+')
-		sign = 1 - 2 * (s[i++] == '-');
-
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		if (base > INT_MAX / 10 || (base == INT_MAX / 10 && s[i] - '0' > 7))
+		while (*(s + i) >= '0' && *(s + i) <= '9')
 		{
-			if (sign == 1)
-				return (INT_MAX);
-			else
-				return (INT_MIN);
+			res = res * 10 + (s[i++] - '0');
+			if (!(s[i] >= '0' && s[i] <= '9'))
+				return (sign * res);
 		}
-		base = 10 * base + (s[i++] - '0');
-	}
-	return (base * sign);
+	} while (s[i++]);
+
+	return (0);
 }
