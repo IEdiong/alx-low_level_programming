@@ -8,31 +8,23 @@
  */
 int main(void)
 {
-	int tho;
-	int hun;
-	int ten;
-	int bas;
+	int i, j;
 
-	for (tho = 0 ; tho < 10 ; tho++)
+	for (i = 0; i < 100; i++)
 	{
-		for (hun = 0 ; hun <= 10 ; hun++)
+		for (j = 0; j < 100; j++)
 		{
-
-			for (ten = 0 ; ten < 10 ; ten++)
+			if (i < j)
 			{
-				for (bas = 0 ; bas < 10 ; bas++)
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
+				putchar(' ');
+				putchar((j / 10) + 48);
+				putchar((j % 10) + 48);
+				if (i != 98 || j != 99)
 				{
-					putchar('0' + tho);
-					putchar('0' + hun);
-					putchar(32);
-					putchar('0' + ten);
-					putchar('0' + bas);
-					if (!(tho == 9 && hun == 8))
-					{
-						putchar(',');
-						putchar(32);
-					}
-					bas++;
+					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
