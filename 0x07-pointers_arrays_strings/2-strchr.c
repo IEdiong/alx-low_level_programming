@@ -1,9 +1,9 @@
 /**
- * _strchr - locates a char in a string
+ * _strchr - locates the first occurence of char in a string
  * @s: string to be parsed
- * @c: character to be searched for
+ * @c: char to be searched for
  *
- * Return: pointer to the first occurence of the character c. Otherwise NULL.
+ * Return: pointer to the first occurence of the char c. Otherwise NULL.
  */
 
 char *_strchr(char *s, char c)
@@ -11,7 +11,7 @@ char *_strchr(char *s, char c)
 	int i;
 
 	i = 0;
-	while (s)
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 			return ((s + i));
