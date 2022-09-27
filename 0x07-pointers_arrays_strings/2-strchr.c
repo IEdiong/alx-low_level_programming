@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strchr - locates the first occurence of char in a string
+ * *_strchr - locates the first occurence of char in a string
  * @s: string to be parsed
  * @c: char to be searched for
  *
