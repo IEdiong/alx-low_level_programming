@@ -3,7 +3,7 @@
  * @s: string to be parsed
  * @c: character to be searched for
  *
- * Return: pointer to the first occurence of the character c
+ * Return: pointer to the first occurence of the character c. Otherwise NULL.
  */
 
 char *_strchr(char *s, char c)
