@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -13,10 +14,10 @@ int main(int argc __attribute__((unused)), char **argv)
 {
 	int x, y;
 
-	x = argv[1];
-	y = argv[2];
 	if (argc > 2)
 	{
+		x = atoi(argv[1]);
+		y = atoi(argv[2]);
 		printf("%d\n", x * y);
 		return (0);
 	}
