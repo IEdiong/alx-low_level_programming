@@ -7,7 +7,6 @@
  * @c: char to initialize the array with
  *
  * Return: pointer to the array. Otherwise NULL if size is zero
- * or 1 if malloc goes bad
  */
 
 char *create_array(unsigned int size, char c)
@@ -27,7 +26,7 @@ char *create_array(unsigned int size, char c)
 		_putchar('o');
 		_putchar('r');
 		_putchar('\0');
-		return (1);
+		return (NULL);
 	}
 	i = 0;
 	while (i < size)
