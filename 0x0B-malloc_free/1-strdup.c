@@ -13,7 +13,6 @@ char *_strdup(char *str)
 	char *new_str;
 	int i;
 	int j;
-	char *s;
 
 	i = 0;
 
