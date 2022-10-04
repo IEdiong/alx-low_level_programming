@@ -21,7 +21,12 @@ char *create_array(unsigned int size, char c)
 	ptr = malloc(sizeof(char) * size);
 	if (ptr == NULL)
 	{
-		_putchar("Error");
+		_putchar("E");
+		_putchar("r");
+		_putchar("r");
+		_putchar("o");
+		_putchar("r");
+		_putchar("\0");
 		return (1);
 	}
 	i = 0;
