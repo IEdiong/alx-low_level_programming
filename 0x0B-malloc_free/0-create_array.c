@@ -6,7 +6,7 @@
  * @size: size of the memory to be allocated
  * @c: char to initialize the array with
  *
- * Return: pointer to the array. Otherwise NULL if size is zero
+ * Return: pointer to the array. Otherwise NULL if size is zero or 1 if malloc goes bad
  */
 
 char *create_array(unsigned int size, char c)
@@ -18,6 +18,11 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 
 	ptr = malloc(sizeof(char) * size);
+	if (ptr == NULL)
+	{
+		printf("Error from malloc");
+		return (1);
+	}
 	i = 0;
 	while (i < size)
 		*(ptr + i++) = c;
