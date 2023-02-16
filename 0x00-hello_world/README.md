@@ -77,10 +77,15 @@ Actual solution in [4-puts.c](./4-puts.c)
 A C program that uses `printf` to print to stdout the string `with proper grammar, but the outcome is a piece of art,` followed by a new line.
 
 ```
-printf("with proper grammar, but the outcome is a piece of art,\n")
+int main(void)
+{
+	printf("with proper grammar, but the outcome is a piece of art,\n");
+	return (0);
+}
 
-// Note that the printf function does not print out a new line automatically, you have to ask it to do so.
 ```
+
+> The `printf` function does not print out a new line automatically, you have to ask it to do so by including the newline character `\n`.
 
 Actual solution in [5-printf.c](./5-printf.c)
 
