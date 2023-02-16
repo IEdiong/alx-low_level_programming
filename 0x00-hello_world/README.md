@@ -59,10 +59,17 @@ Actual solution in [3-name](./3-name)
 A C program that uses `puts` to print to stdout the string `"Programming is like building a multilingual puzzle` followed by a new line.
 
 ```
-puts("\"Programming is like building a multilingual puzzle")
+int main(void)
+{
+	puts("\"Programming is like building a multilingual puzzle");
+	return (0);
+}
 
-// Note that the puts function automatically prints out a newline character at the end of the string.
 ```
+
+> The `\` is used to escape the `"` that comes before the text `Programming`.
+
+> The `puts` function automatically prints out a newline character at the end of the string.
 
 Actual solution in [4-puts.c](./4-puts.c)
 
