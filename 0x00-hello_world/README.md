@@ -106,3 +106,15 @@ int main(void)
 > The `sizeof` function is runs the size of the data types being passed into it as a parameter.
 
 Actual solution in [6-size.c](./6-size.c)
+
+## 7. Intel 
+A bash scripts that generates the assembly code (Intel syntax) of a C code and save it in an output file. The `C` file name will be saved in the variable `$CFILE` and the output file should be named the same as the `C` file.
+
+```
+#!/bin/bash
+gcc -S -masm=intel $CFILE
+```
+
+> The `-masm=dialect` outputs `asm` instructions using selected `dialect`. Supported choices are `intel` or `att` (the default one). Darwin does not support `intel`. 
+
+Actual solution in [100-intel](./100-intel)
