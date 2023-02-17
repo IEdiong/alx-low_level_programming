@@ -118,3 +118,33 @@ gcc -S -masm=intel $CFILE
 > The `-masm=dialect` outputs `asm` instructions using selected `dialect`. Supported choices are `intel` or `att` (the default one). Darwin does not support `intel`. 
 
 Actual solution in [100-intel](./100-intel)
+
+## 8. UNIX is basically a simple operating system, but you have to be a genius to understand the simplicity.
+
+A `C` program that prints exactly `and that piece of art is useful" - Dora Korpar, 2015-10-19`, followed by a new line, to the `standard error`. The program is not allowed to use any functions listed in the `NAME` section of the man (3) `printf` or man (3) `puts`. The program should return 1.
+
+```
+int main(void)
+{
+	write(2, "and that piece of art is useful\" - Dora korpar, 2015-10-19\n", 59);
+	return (1);
+}
+```
+
+> The `write()` function writes to a file descriptor. `write()` writes up to `count` bytes from the buffer pointed `buf` to the file referred to by the file descriptor `fd`.
+
+> The `write()` function is defined as `ssize_t write(int fd, const void *buf, size_t count);`
+
+> `fd` stands for `file descriptor`.
+
+> Standard File Descriptors: When any process starts, then that process file descriptors table’s fd(file descriptor) 0, 1, 2 open automatically, (By default) each of these 3 fd references file table entry for a file named /dev/tty.
+
+> Read from stdin => read from fd 0 : Whenever we write any character from keyboard, it read from stdin through fd 0 and save to file named /dev/tty.
+
+> Write to stdout => write to fd 1 : Whenever we see any output to the video screen, it’s from the file named /dev/tty and written to stdout in screen through fd 1.
+
+> Write to stderr => write to fd 2 : We see any error to the video screen, it is also from that file write to stderr in screen through fd 2.
+
+> Content gotten from [linux.die.net](https://linux.die.net/man/2/write#:~:text=The%20file%20descriptor%20fd%20refers,and%20the%20write%20would%20block.) and [geeksforgeeks](https://www.geeksforgeeks.org/input-output-system-calls-c-create-open-close-read-write/)
+
+Actual solution in [101-quote.c](./101-quote.c)
