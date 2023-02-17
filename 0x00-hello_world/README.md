@@ -93,11 +93,16 @@ Actual solution in [5-printf.c](./5-printf.c)
 A C program that prints the size of various types on the computer it is compiled and run on.
 
 ```
-printf("Size of a char: %d byte(s)\n", sizeof(char));
-printf("Size of an int: %d byte(s)\n", sizeof(int));
-printf("Size of a long int: %d byte(s)\n", sizeof(long int));
-printf("Size of a long long int: %d byte(s)\n", sizeof(long long));
-printf("Size of a float: %d byte(s)\n", sizeof(float));
+int main(void)
+{
+	printf("Size of a char: %d byte(s)\n", sizeof(char));
+	printf("Size of an int: %d byte(s)\n", sizeof(int));
+	printf("Size of a long int: %d byte(s)\n", sizeof(long int));
+	printf("Size of a long long int: %d byte(s)\n", sizeof(long long));
+	printf("Size of a float: %d byte(s)\n", sizeof(float));
+}
 ```
+
+> The `sizeof` function is runs the size of the data types being passed into it as a parameter.
 
 Actual solution in [6-size.c](./6-size.c)
