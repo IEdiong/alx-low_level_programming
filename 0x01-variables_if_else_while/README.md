@@ -113,7 +113,7 @@ int main(void)
 Actual solution in [2-print_alphabet.c](./2-print_alphabet.c)
 
 ## 3. alphABET 
-A `C` program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.
+A `C` program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.The program uses only the `putchar` function; and it uses it only thrice in the code. 
 
 ```
 #include <stdio.h>
@@ -142,3 +142,32 @@ int main(void)
 
 
 Actual solution in [3-print_alphabets.c](./3-print_alphabets.c)
+
+## 4. When I was having that alphabet soup, I never thought that it would pay off. 
+A `C` program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.The program prints all the letters except `q` and `e`. The program uses only the `putchar` function; and it uses it only twice in the code. 
+
+```
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	char c;
+
+	for (c = 'a'; c <= 'z'; c++)
+		if (!(c == 'q' || c == 'e'))
+			putchar(c);
+
+	putchar('\n');
+	return (0);
+}
+```
+
+> Basic combination of a `for` loop and an `if` statement.
+
+
+Actual solution in [4-print_alphabt.c](./4-print_alphabt.c)
