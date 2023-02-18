@@ -322,3 +322,41 @@ int main(void)
 
 Actual solution in [9-print_comb.c](./9-print_comb.c)
 
+## 10. Inventing is a combination of brains and materials. The more brains you use, the less material you need. 
+A `C` program that prints all possible different combinations of two single-digit numbers. The numbers are separated by `,`, followed by a space and the numbers are printed in ascending order. The two digits are different. The program uses the `putchar` function only and a maximum of four times in the code. The program doesn't use any variable of type `char`. 
+
+```
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ *
+ * Return: Always 0 (Sucess)
+ */
+int main(void)
+{
+	int n;
+	int i;
+
+	for (n = 0 ; n < 9 ; n++)
+	{
+		i = n + 1;
+		do {
+			putchar('0' + n);
+			putchar('0' + i);
+			if (n < 8)
+			{
+				putchar(',');
+				putchar(32);
+			}
+			i++;
+		} while (i < 10);
+	}
+	putchar('\n');
+	return (0);
+}
+```
+
+Actual solution in [100-print_comb3.c](./100-print_comb3.c)
+
