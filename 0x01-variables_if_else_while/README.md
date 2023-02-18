@@ -360,3 +360,47 @@ int main(void)
 
 Actual solution in [100-print_comb3.c](./100-print_comb3.c)
 
+## 11. The success combination in business is: Do what you do better... and: do more of what you do...
+
+A `C` program that prints all possible different combinations of three single-digit numbers. The numbers are separated by `,`, followed by a space and the numbers are printed in ascending order. The three digits are different. The program uses the `putchar` function only and a maximum of four times in the code. The program doesn't use any variable of type `char`. 
+
+```
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ *
+ * Return: Always 0 (Sucess)
+ */
+int main(void)
+{
+	int n;
+	int i;
+	int j;
+
+	for (n = 0 ; n < 9 ; n++)
+	{
+		for (j = n + 1 ; j < 9 ; j++)
+		{
+			i = j + 1;
+			do {
+				putchar('0' + n);
+				putchar('0' + j);
+				putchar('0' + i);
+				if (n < 7)
+				{
+					putchar(44);
+					putchar(32);
+				}
+				i++;
+			} while (i < 10);
+		}
+	}
+	putchar('\n');
+	return (0);
+}
+```
+
+Actual solution in [101-print_comb4.c](./101-print_comb4.c)
+
