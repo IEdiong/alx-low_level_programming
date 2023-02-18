@@ -227,7 +227,7 @@ int main(void)
 Actual solution in [6-print_numberz.c](./6-print_numberz.c)
 
 ## 7. Smile in the mirror 
-A `C` program that prints the lowercase alphabet in reverse, followed by a new line. 
+A `C` program that prints the lowercase alphabet in reverse, followed by a new line. It also uses only the `putchar` function; and that only twice in the code.
 
 ```
 #include <stdio.h>
@@ -253,4 +253,37 @@ int main(void)
 
 
 Actual solution in [7-print_tebahpla.c](./7-print_tebahpla.c)
+
+## 8. Hexadecimal 
+A `C` program that prints all the numbers of base 16 in lowercase, followed by a new line. It also uses only the `putchar` function; and that only three times in the code.
+
+
+```
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	n = 0;
+	while (n < 16)
+	{
+		if (n < 10)
+			putchar(48 + n);
+		else
+			putchar(87 + n);
+		n++;
+	}
+	putchar('\n');
+	return (0);
+}
+```
+
+
+Actual solution in [8-print_base16.c](./8-print_base16.c)
 
