@@ -171,3 +171,29 @@ int main(void)
 
 
 Actual solution in [4-print_alphabt.c](./4-print_alphabt.c)
+
+## 5. Numbers 
+A `C` program that prints all single digit numbers of base `10` starting from `0`, followed by a new line.
+
+```
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	for (n = 0; c <= 10; c++)
+		printf("%d", n);
+
+	putchar('\n');
+	return (0);
+}
+```
+
+
+Actual solution in [5-print_numbers.c](./5-print_numbers.c)
