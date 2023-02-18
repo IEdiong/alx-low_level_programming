@@ -287,3 +287,38 @@ int main(void)
 
 Actual solution in [8-print_base16.c](./8-print_base16.c)
 
+## 9. Patience, persistence and perspiration make an unbeatable combination for success 
+A `C` program that prints all possible combinations of single-digit numbers. The numbers are separated by `,`, followed by a space and the numbers are printed in ascending order. The program uses the `putchar` function only and a maximum of four times in the code. The program doesn't use any variable of type `char`. 
+
+```
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	n = 0;
+	while (n < 10)
+	{
+		putchar(48 + n);
+		if (n < 9)
+		{
+			putchar(44);
+			putchar(32);
+		}
+		n++;
+	}
+	putchar('\n');
+	return (0);
+}
+```
+
+> The ascii code for `,` and space ` ` is `44` and `32` respectively.
+
+Actual solution in [9-print_comb.c](./9-print_comb.c)
+
