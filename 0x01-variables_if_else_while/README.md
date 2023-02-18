@@ -187,7 +187,7 @@ int main(void)
 {
 	int n;
 
-	for (n = 0; c <= 9; c++)
+	for (n = 0; n <= 9; n++)
 		printf("%d", n);
 
 	putchar('\n');
@@ -225,3 +225,32 @@ int main(void)
 > The arguments to `putchar` is [the ascii code](https://www.asciitable.com/) of the `char` you want to print. The digit `0` through to `9` are encoded as the consecutive numbers `48` through `57`. So, to print the one-digit number `n` you need to add either `48` or the ascii code `'0'`to the number `n`. Source: [stackoverflow](https://stackoverflow.com/questions/73737032/printing-int-using-putchar-in-c).
 
 Actual solution in [6-print_numberz.c](./6-print_numberz.c)
+
+## 7. Smile in the mirror 
+A `C` program that prints the lowercase alphabet in reverse, followed by a new line. 
+
+```
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	char c;
+
+	c = 'z';
+	while (c >= 'a')
+		putchar(c);
+		c--;
+
+	putchar('\n');
+	return (0);
+}
+```
+
+
+Actual solution in [7-print_tebahpla.c](./7-print_tebahpla.c)
+
