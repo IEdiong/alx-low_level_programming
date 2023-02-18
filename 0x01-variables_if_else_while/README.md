@@ -404,3 +404,46 @@ int main(void)
 
 Actual solution in [101-print_comb4.c](./101-print_comb4.c)
 
+## 12. Software is eating the World
+
+A `C` program that prints all possible combinations of two two-digit numbers. The two numbers are separated by a space. The combination of numbers are separated by comma, followed by a space and the numbers are printed in ascending order. The combination of numbers are printed in ascending order and are different. The program uses the `putchar` function only and a maximum of four times in the code. The program doesn't use any variable of type `char`. 
+
+```
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ *
+ * Return: Always 0 (Sucess)
+ */
+int main(void)
+{
+	int i, j;
+
+	for (i = 0; i < 100; i++)
+	{
+		for (j = 0; j < 100; j++)
+		{
+			if (i < j)
+			{
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
+				putchar(' ');
+				putchar((j / 10) + 48);
+				putchar((j % 10) + 48);
+				if (i != 98 || j != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+		}
+	}
+	putchar('\n');
+	return (0);
+}
+```
+
+Actual solution in [102-print_comb5.c](./102-print_comb5.c)
+
