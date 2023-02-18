@@ -80,3 +80,34 @@ int main(void)
 > Basic `if...else if...else` statement.
 
 Actual solution in [1-last_digit.c](./1-last_digit.c)
+
+## 2. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game. 
+A `C` program that prints the alphabet in lowercase, followed by a new line. The program uses only the `putchar` function; and it uses it only twice in the code. 
+
+```
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	char c;
+
+	c = 'a';
+	while (c <= 'z')
+		putchar(c);
+	putchar('\n');
+	return (0);
+}
+```
+
+> Basic `while` loop.
+
+> `putchar` function prints to the standard output a character.
+
+> Betty coding style permits a space between the `while` keyword and opening parenthesis `(`, but no space around (inside) parenthesized expressions. This example is bad: `while ( c <= 'z')`.
+
+Actual solution in [2-print_alphabet.c](./2-print_alphabet.c)
