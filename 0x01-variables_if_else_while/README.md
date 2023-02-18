@@ -111,3 +111,34 @@ int main(void)
 > Betty coding style permits a space between the `while` keyword and opening parenthesis `(`, but no space around (inside) parenthesized expressions. This example is bad: `while ( c <= 'z')`.
 
 Actual solution in [2-print_alphabet.c](./2-print_alphabet.c)
+
+## 3. alphABET 
+A `C` program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.
+
+```
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	char c;
+
+	for (c = 'a'; c <= 'z'; c++)	
+		putchar(c);
+
+	for (c = 'A'; c <= 'Z'; c++)
+		putchar(c);
+
+	putchar('\n');
+	return (0);
+}
+```
+
+> Basic `for` loop.
+
+
+Actual solution in [3-print_alphabets.c](./3-print_alphabets.c)
