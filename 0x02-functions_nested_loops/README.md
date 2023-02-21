@@ -111,3 +111,29 @@ int _islower(int c)
 > ASCII code for lowercase alphabets range from 97 to 122, where `a` is `97` and `z` is `122`.
 
 Actual solution in [3-islower.c](./3-islower.c)
+
+## 4. isalpha 
+
+A function that checks for alphabetic character. It returns `1` if the argument is a letter, uppercase or lowercase and `0` otherwise. 
+
+```
+#include "main.h"
+
+/**
+ * _isalpha - Checks for alphabetic character.
+ * @c: The character to be checked
+ *
+ * Return: 1 if character is a letter (lowercase or uppercase). 0 otherwise.
+ */
+int _isalpha(int c)
+{
+	if (c > 96 && c < 123 || c > 64 && c < 91)
+		return (1);
+	else
+		return (0);
+}
+```
+
+> ASCII code for lowercase alphabets range from 97 to 122, while uppercase alphabets range from 65 to 90.
+
+Actual solution in [4-isalpha.c](./4-isalpha.c)
