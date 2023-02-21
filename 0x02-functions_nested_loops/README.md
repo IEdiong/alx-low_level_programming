@@ -85,3 +85,29 @@ void print_alphabet_x10(void)
 ```
 
 Actual solution in [2-print_alphabet_x10.c](./2-print_alphabet_x10.c)
+
+## 3. islower 
+
+A function that checks for lowercase character. It returns `1` if the argument is lowercase and `0` otherwise. 
+
+```
+#include "main.h"
+
+/**
+ * _islower - Checks for lowercase character.
+ * @c: The character to be checked
+ *
+ * Return: 1 if character is lowercase. 0 otherwise.
+ */
+int _islower(int c)
+{
+	if (c > 96 && c < 123)
+		return (1);
+	else
+		return (0);
+}
+```
+
+> ASCII code for lowercase alphabets range from 97 to 122, where `a` is `97` and `z` is `122`.
+
+Actual solution in [3-islower.c](./3-islower.c)
