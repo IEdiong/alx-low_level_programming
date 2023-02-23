@@ -47,3 +47,45 @@ int _isdigit(int c)
 ```
 
 Actual solution in [1-isdigit.c](./1-isdigit.c)
+
+## 10. Triangles
+
+A function that prints a triangle, followed by a new line. If the `size` if `0` or less, the funtion prints only a new line. 
+
+```
+#include "main.h"
+
+/**
+ * _print_triangle - prints a triangle.
+ * @size: size of the triangle 
+ */
+void _print_triangle(int size)
+{
+	int row, i, j;
+
+	if (size < 1)
+	{
+		_putchar('\n');
+		return;
+	}
+	
+	row = 0;
+	while (row < size)
+	{
+		for (i = 0; i < size - row + 1; i++)
+		{
+			_putchar(32);
+		}
+
+		for (j = 0; j < row + 1; j++)
+		{
+			_putchar(35);
+		}
+		_putchar('\n');
+		row++;
+	}
+	return;
+}
+```
+
+Actual solution in [10-print_triangle.c](./10-print_triangle.c)
