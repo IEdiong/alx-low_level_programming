@@ -59,7 +59,7 @@ A function that prints a triangle, followed by a new line. If the `size` if `0` 
  * _print_triangle - prints a triangle.
  * @size: size of the triangle 
  */
-void _print_triangle(int size)
+void print_triangle(int size)
 {
 	int row, i, j;
 
@@ -69,15 +69,15 @@ void _print_triangle(int size)
 		return;
 	}
 	
-	row = 0;
-	while (row < size)
+	row = 1;
+	while (row <= size)
 	{
-		for (i = 0; i < size - row + 1; i++)
+		for (i = 0; i < size - row; i++)
 		{
 			_putchar(32);
 		}
 
-		for (j = 0; j < row + 1; j++)
+		for (j = 0; j < row; j++)
 		{
 			_putchar(35);
 		}
@@ -85,7 +85,6 @@ void _print_triangle(int size)
 		row++;
 	}
 	return;
-}
-```
+}```
 
 Actual solution in [10-print_triangle.c](./10-print_triangle.c)

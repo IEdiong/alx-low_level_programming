@@ -14,15 +14,15 @@ void print_triangle(int size)
 		return;
 	}
 	
-	row = 0;
-	while (row < size)
+	row = 1;
+	while (row <= size)
 	{
-		for (i = 0; i < size - row + 1; i++)
+		for (i = 0; i < size - row; i++)
 		{
 			_putchar(32);
 		}
 
-		for (j = 0; j < row + 1; j++)
+		for (j = 0; j < row; j++)
 		{
 			_putchar(35);
 		}
