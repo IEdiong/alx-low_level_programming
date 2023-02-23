@@ -20,7 +20,7 @@ int main(void)
 				printf(",%lu ", prim);
 		}
 
-		prim+=2;
+		prim += 2;
 	}
 
 	putchar('\n');
