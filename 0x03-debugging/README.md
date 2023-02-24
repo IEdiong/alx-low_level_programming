@@ -24,3 +24,36 @@ int main(void)
 ```
 
 Actual solution in [0-main.c](./0-main.c)
+
+## 1. Like, comment, subscribe
+
+The commented part in the program causes an infinite loop.
+
+```
+#include <stdio.h>
+
+/**
+ * main - causes an infinite loop
+ * Return: 0
+ */
+
+int main(void)
+{
+	int i;
+
+	printf("Infinite loop incoming :(\n");
+
+	i = 0;
+	/**
+	* while (i < 10)
+	* {
+	*	putchar(i);
+	* }
+	*/
+	printf("Infinite loop avoided! \\o/\n");
+
+	return (0);
+}
+```
+
+Actual solution in [1-main.c](./1-main.c)
