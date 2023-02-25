@@ -11,7 +11,11 @@ void print_multiple(int j, int i)
 {
 	int hun, tenth, unit;
 
-	if (j * i < 10)
+	if (j == 0)
+	{
+		_putchar(48);
+	}
+	else if (j * i < 10)
 	{
 		_putchar(32);
 		_putchar(32);
