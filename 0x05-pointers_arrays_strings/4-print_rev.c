@@ -23,9 +23,8 @@ void print_rev(char *s)
 		i++;
 
 	do {
-		--i;
+		i--;
 		_putchar(*(s + i));
 	} while (i);
-	_putchar('\0');
 	_putchar('\n');
 }
