@@ -7,9 +7,9 @@
 
 char *leet(char *s)
 {
-	char *l = ['a', 'e', 'o', 't', 'l'];
-	char *u = ['A', 'E', 'O', 'T', 'L'];
-	int *n = [4, 3, 0, 7, 1];
+	char *l = "aeotl";
+	char *u = "AEOTL";
+	char *n = "43071";
 	int p = 0;
 	int i;
 
