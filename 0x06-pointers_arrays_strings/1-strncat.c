@@ -22,7 +22,11 @@ char *_strncat(char *dest, char *src, int n)
 		dest[idx_dest + idx_src] = src[idx_src];
 		idx_src++;
 	}
-	dest[idx_dest + idx_src] = '\0';
+
+	if (idx_src < n)
+		dest[idx_dest + idx_src] = '\0';
+	else
+		dest[idx_dest + n] = '\0';
 
 	return (dest);
 }
