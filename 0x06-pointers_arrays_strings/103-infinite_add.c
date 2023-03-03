@@ -1,52 +1,54 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * infinite_add - adds two numbers
- * @n1: first number
- * @n2: second number
- * @r: result
- * @size_r: result length
- * Return: sum
+ * @n1: number one.
+ * @n2: number two.
+ * @r: buffer that the function will use to store the result.
+ * @size_r: buffer size:
+ * Return: the pointer to dest.
  */
+
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i = 0, j = 0, k, g = 0, f, s, d = 0;
-	/* get the length of the two numbers */
-	while (n1[i] != '\0')
-		i++;
-	while (n2[j] != '\0')
-		j++;
-	/* get the greater in length of the two */
-	if (i > j)
-		g = i;
+	int c1 = 0, c2 = 0, op, bg, dr1, dr2, add = 0;
+
+	while (*(n1 + c1) != '\0')
+		c1++;
+	while (*(n2 + c2) != '\0')
+		c2++;
+	if (c1 >= c2)
+		bg = c1;
 	else
-		g = j;
-	/* check if size_r can contain the greater number + '\0' */
-	if (g + 1 > size_r)
+		bg = c2;
+	if (size_r <= bg + 1)
 		return (0);
-	r[g] = '\0';
-	for (k = g - 1 ; k >= 0 ; k--)
+	r[bg + 1] = '\0';
+	c1--, c2--, size_r--;
+	dr1 = *(n1 + c1) - 48, dr2 = *(n2 + c2) - 48;
+	while (bg >= 0)
 	{
-		i--;
-		j--;
-		if (i >= 0)
-			f = n1[i] - '0';
+		op = dr1 + dr2 + add;
+		if (op >= 10)
+			add = op / 10;
 		else
-			f = 0;
-		if (j >= 0)
-			s = n2[j] - '0';
+			add = 0;
+		if (op > 0)
+		*(r + bg) = (op % 10) + 48;
 		else
-			s = 0;
-		r[k] = (f + s + d) % 10 + '0';
-		d = (f + s + d) / 10;
+			*(r + bg) = '0';
+		if (c1 > 0)
+			c1--, dr1 = *(n1 + c1) - 48;
+		else
+			dr1 = 0;
+		if (c2 > 0)
+			c2--, dr2 = *(n2 + c2) - 48;
+		else
+			dr2 = 0;
+		bg--, size_r--;
 	}
-	if (d == 1)
-	{
-		r[g + 1] = '\0';
-		if (g + 2 > size_r)
-			return (0);
-		while (g-- >= 0)
-			r[g + 1] = r[g];
-		r[0] = d + '0';
-	}
-	return (r);
+	if (*(r) == '0')
+		return (r + 1);
+	else
+		return (r);
 }
