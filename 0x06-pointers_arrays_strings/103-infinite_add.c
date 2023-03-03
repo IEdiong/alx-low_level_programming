@@ -23,11 +23,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	/* check if size_r can contain the greater number + '\0' */
 	if (g + 1 > size_r)
 		return (0);
-	/* insert a '\0' in the last index */
 	r[g] = '\0';
 	for (k = g - 1 ; k >= 0 ; k--)
 	{
-		i--, j--;
+		i--;
+		j--;
 		if (i >= 0)
 			f = n1[i] - '0';
 		else
