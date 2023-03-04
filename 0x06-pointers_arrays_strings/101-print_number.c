@@ -7,7 +7,6 @@
 void print_number(int n)
 {
 	unsigned int num;
-	int exp;
 
 	if (n >= 0 && n < 10)
 	{
@@ -24,12 +23,9 @@ void print_number(int n)
 		num = n;
 	}
 
-	exp = 0;
-
 	if (num >= 10)
 	{
 		print_number(num / 10);
 	}
 	_putchar((num % 10) + '0');
-	return;
 }
