@@ -58,3 +58,4 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 }
 ```
 
+Actual solution in [1-memcpy.c](./1-memcpy.c)
