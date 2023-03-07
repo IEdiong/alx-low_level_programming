@@ -207,4 +207,4 @@ char *_strstr(char *haystack, char *needle)
 }
 ```
 
-Actual solution in [5-strstr](./5-strstr)
+Actual solution in [5-strstr.c](./5-strstr.c)
