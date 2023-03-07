@@ -99,7 +99,7 @@ A function that gets the length of a prefix substring.
  * @s: initial segment
  * @accept: substring
  *
- * Return: number of bytes in the initia segment
+ * Return: number of bytes in the initial segment
  */
 
 unsigned int _strspn(char *s, char accept)
@@ -133,3 +133,37 @@ unsigned int _strspn(char *s, char accept)
 `s` which consist only of bytes from `accept`.
 
 Actual solution in [3-strspn.c](./3-strspn.c)
+
+
+## 4. strpbrk 
+
+A function that searches a string for any of a set of bytes.
+
+```
+/**
+ * _strpbrk - searches a string for any of a set of bytes
+ * @s: string to be searched
+ * @accept: substring to search with
+ *
+ * Return: pointer to the byte in s that matches one of the bytes in accept
+ */
+
+char *_strpbrk(char *s, char accept)
+{
+	int i, j;
+
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; accept[j] != '\0'; j++)
+		{
+			if (s[i] == accept[j])
+				return (s + i);
+		}
+	}
+
+	return (NULL);
+}
+```
+
+Actual solution in [4-strpbrk.c](./4-strpbrk.c)
