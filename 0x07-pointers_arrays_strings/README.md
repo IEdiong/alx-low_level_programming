@@ -102,7 +102,7 @@ A function that gets the length of a prefix substring.
  * Return: number of bytes in the initia segment
  */
 
-unsigned int *_strspn(char *s, char accept)
+unsigned int _strspn(char *s, char accept)
 {
 	unsigned int count;
 	int i, j, test;
