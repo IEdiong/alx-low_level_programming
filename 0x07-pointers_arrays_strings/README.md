@@ -167,3 +167,44 @@ char *_strpbrk(char *s, char accept)
 ```
 
 Actual solution in [4-strpbrk.c](./4-strpbrk.c)
+
+
+## 5. strstr
+
+A function that locates a substring.
+
+```
+#include <stddef.h>
+
+/**
+ * _strstr - locates a substring
+ * @haystack: string to search
+ * @needle: substring to search for
+ *
+ * Return: pointer to the beginning of the located substring
+ * or NULL if the substring is not found.
+ */
+
+char *_strstr(char *haystack, char *needle)
+{
+	unsigned int i, j;
+
+	i = 0;
+	while (haystack[i] != '\0')
+	{
+		j = 0;
+		while (needle[j] != '\0')
+		{
+			if (needle[j] != haystack[i + j])
+				break;
+			j++;
+		}
+		if (needle[j] == '\0')
+			return ((haystack + i));
+		i++;
+	}
+	return (NULL);
+}
+```
+
+Actual solution in [5-strstr](./5-strstr)
