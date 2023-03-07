@@ -59,3 +59,77 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 ```
 
 Actual solution in [1-memcpy.c](./1-memcpy.c)
+
+
+## 2. strchr
+
+A function that locates a character in a string.
+
+```
+/**
+ * _strchr - locates a character in a string
+ * @s: string to be searched
+ * @c: character to lookup
+ *
+ * Return: pointer to the character. Otherwise NULL. 
+ */
+
+char *_strchr(char *s, char c)
+{
+	unsigned int i;
+
+	for (i = 0; *(s + i) != '\0'; i++)
+	{
+		if (*(s + i) == c)
+			return (s + i);
+	}
+	return (NULL);
+}
+```
+
+Actual solution in [2-strchr.c](./2-strchr.c)
+
+## 3. strspn 
+
+A function that gets the length of a prefix substring. 
+
+```
+/**
+ * _strspn - gets the length of a prefix substring
+ * @s: initial segment
+ * @accept: substring
+ *
+ * Return: number of bytes in the initia segment
+ */
+
+unsigned int *_strspn(char *s, char accept)
+{
+	unsigned int count;
+	int i, j, test;
+
+	count = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		test = 0;
+		for (j = 0; accept[j] != '\0'; j++)
+		{
+			if (s[i] == accept[j])
+			{
+				count++;
+				test = 1;
+			}
+		}
+
+		if (test == 0)
+			return (count);
+	}
+
+	return (0);
+}
+```
+
+> The test variable is used to check if we have come to the end of initial segment of 
+`s` which consist only of bytes from `accept`.
+
+Actual solution in [3-strspn.c](./3-strspn.c)
