@@ -53,3 +53,33 @@ int main(int argc, char **argv __attribute((__unused__)))
 > We supress the compiler's warning with `__attribute((__unused__))`, since we would not be using the `**argv` parameter in the program body. A better way of writing it is by putting the variable name before the `__attribute((__unused__))`.
 
 Actual solution in [1-args.c](./1-args.c)
+
+## 2. The best argument against democracy is a five-minute conversation with the average voter 
+
+A `c` program that prints all arguments it receives.
+
+```
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * main - prints the number of arguments passed into it
+ * @argc: arguments count
+ * @argv: arguments vector
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(int argc, char **argv)
+{
+	int i;
+
+	for (i = 0; i < argc; i++)
+		printf("%s\n", argv[i]);
+
+	return (0);
+}
+```
+
+
+Actual solution in [2-args.c](./2-args.c)
