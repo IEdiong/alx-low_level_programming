@@ -43,13 +43,13 @@ A `c` program that prints the number of arguments passed into it.
  * Return: Always 0 (Success)
  */
 
-int main(int argc, char __attribute((__unused__)) *argv[])
+int main(int argc, char **argv __attribute((__unused__)))
 {
 	printf("%d\n", argc - 1);
 	return (0);
 }
 ```
 
-> We supress the compiler's warning with `__attribute((__unused__))`, since we would not be using the `argv` parameter in the program body. 
+> We supress the compiler's warning with `__attribute((__unused__))`, since we would not be using the `**argv` parameter in the program body. A better way of writing it is by putting the variable name before the `__attribute((__unused__))`.
 
 Actual solution in [1-args.c](./1-args.c)
