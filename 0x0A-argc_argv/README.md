@@ -26,3 +26,30 @@ int main(int __attribute((__unused__)) argc, char *argv[])
 > `__attribute((__unused__))` suppresses all warnings with regards to unused variables or parameters.
 
 Actual solution in [0-whatsmyname.c](./0-whatsmyname.c)
+
+## 1. Silence is argument carried out by other means
+
+A `c` program that prints the number of arguments passed into it.
+
+```
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * main - prints the number of arguments passed into it
+ * @argc: arguments count
+ * @argv: arguments vector
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(int argc, char __attribute((__unused__)) *argv[])
+{
+	printf("%d\n", argc - 1);
+	return (0);
+}
+```
+
+> We supress the compiler's warning with `__attribute((__unused__))`, since we would not be using the `argv` parameter in the program body. 
+
+Actual solution in [1-args.c](./1-args.c)
