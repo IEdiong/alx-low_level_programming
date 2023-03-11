@@ -3,7 +3,7 @@
 
 int return_change(int money);
 /**
- * main - multiplies two numbers
+ * main - prints the minimum number of coins to make change
  * @argc: arguments count
  * @argv: arguments vector
  *
