@@ -124,3 +124,51 @@ int main(int argc __attribute__((unused)), char **argv)
 > `atoi` is used to convert the arguments, which are strings, into `int` type.
 
 Actual solution in [3-mul.c](./3-mul.c)
+
+
+## 4. To infinity and beyond
+
+A program that adds positive numbers.
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+/**
+ * main - adds positive numbers
+ * @argc: arguments count
+ * @argv: arguments vector
+ *
+ * Return: Always 0 (Success). Otherwise 1.
+ */
+
+int main(int argc, char *argv[])
+{
+	int i, j, sum;
+
+	sum = 0;
+	if (argc < 2)
+	{
+		printf("%d\n", sum);
+		return (0);
+	}
+
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+		sum += atoi(argv[i]);
+	}
+	printf("%d\n", sum);
+	return (0);
+}
+```
+
+Actual solution in [4-add.c](./4-add.c)
