@@ -205,3 +205,28 @@ int **alloc_grid(int width, int height)
 > The trick is to first create a double pointer that points to an array of pointers. Then loop through each pointer and make them point to an array of int.
 
 Actual solution in [3-alloc_grid.c](./3-alloc_grid.c)
+
+
+## 4. It's not bragging if you can back it up
+
+A function that frees a 2 dimensional grid previously created by `alloc_grid` function.
+
+```
+#include <stdlib.h>
+
+/**
+ * free_grid - frees up a 2 dim grid
+ * @grid: grid memory area to be freed
+ * @height: number of rows
+ */
+void free_grid(int **grid, int height)
+{
+	int i;
+
+	free(grid);
+	for (i = 0; i < height; i++)
+		free(grid[i]);
+}
+```
+
+Actual solution in [4-free_grid.c](./4-free_grid.c)
