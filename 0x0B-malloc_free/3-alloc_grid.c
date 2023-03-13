@@ -8,37 +8,30 @@
  *
  * Return: pointer to a new matrix. Otherwise NULL
  */
-
 int **alloc_grid(int width, int height)
 {
-	int **arr;
-	int i;
-	int j;
+	int i, j;
+	int **grid;
 
-	if (height <= 0 || width <= 0)
+	if (width < 1 || height < 1)
 		return (NULL);
 
-	arr = (int **) malloc(sizeof(int *) * height);
-
-	if (arr == NULL)
+	grid = malloc(width * sizeof(int *));
+	if (grid == NULL)
 		return (NULL);
 
-	for (i = 0; i < height; i++)
+	for (i = 0; i < width; i++)
 	{
-		arr[i] = (int *) malloc(sizeof(int) * width);
-		if (arr[i] == NULL)
-		{
-			free(arr);
-			for (j = 0; j <= i; j++)
-				free(arr[j]);
+		grid[i] = malloc(height * sizeof(int));
+		if (grid[i] == NULL)
 			return (NULL);
-		}
 	}
 
-	for (i = 0; i < height; i++)
+	for (i = 0; i < width; i++)
 	{
-		for (j = 0; j < width; j++)
-			arr[i][j] = 0;
+		for (j = 0; j < height; j++)
+			grid[i][j] = 0;
 	}
-	return (arr);
+
+	return (grid);
 }

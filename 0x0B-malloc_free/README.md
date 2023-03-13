@@ -152,3 +152,46 @@ char *str_concat(char *s1, char *s2)
 ```
 
 Actual solution in [2-str_concat.c](./2-str_concat.c)
+
+
+## 3. If you even dream of beating me you'd better wake up and apologize
+
+A function that returns a pointer to a 2 dimensional array of integers.
+
+```
+#include <stdlib.h>
+
+/**
+ * str_concat - Concatenates two strings.
+ * @s1: first string
+ * @s2: second string
+ *
+ * Return: pointer to the newly allocated space in memory which
+ * contains the contents of s1 followed by the contents of s2 and
+ * null terminated. Otherwise NULL, if on failure.
+ */
+
+int **alloc_grid(int width, int height)
+{
+	unsigned int i, j, size;
+	int **grid;
+
+	if (width < 1 || height < 1)
+		return (NULL);
+
+	size = width * height;
+	grid = malloc(size * sizeof(int));
+	if (grid == NULL)
+		return (NULL);
+
+	for (i = 0; i < height; i++)
+	{
+		for (j = 0; j < width; j++)
+			grid[i][j] = 0;
+	}
+
+	return (grid);
+}
+```
+
+Actual solution in [3-alloc_grid.c](./3-alloc_grid.c)
