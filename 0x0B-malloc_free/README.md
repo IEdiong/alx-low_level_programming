@@ -24,7 +24,7 @@ char *create_array(unsigned int size, char c)
 	if (size == 0)
 		return (NULL);
 
-	s = malloc((size + 1) * sizeof(char));
+	s = malloc(size * sizeof(char));
 	if (s == NULL)
 		return (NULL);
 
@@ -35,10 +35,11 @@ char *create_array(unsigned int size, char c)
 		i++;
 	}
 
-	*(s + i) = '\0';
 
 	return (s);
 }
 ```
+
+> NB: we don't need to create extra memory for the null byte contained in strings as this is not required for this task.
 
 Actual solution in [0-create_array.c](./0-create_array.c)
