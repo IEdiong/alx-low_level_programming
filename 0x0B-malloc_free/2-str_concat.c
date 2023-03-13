@@ -1,49 +1,50 @@
 #include <stdlib.h>
-#include "main.h"
 
 /**
- * str_concat - concatenates two strings
- * @s1: prefixing string
- * @s2: suffixing string
+ * str_concat - Concatenates two strings.
+ * @s1: first string
+ * @s2: second string
  *
- * Return: pointer to a new string. Otherwise NULL
+ * Return: pointer to the newly allocated space in memory which
+ * contains the contents of s1 followed by the contents of s2 and
+ * null terminated. Otherwise NULL, if on failure.
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	int len1;
-	int len2;
-	int i;
-	int j;
-	char *new_str;
+	unsigned int i, j, k, size;
+	char *str;
 
-	len1 = 0;
-	len2 = 0;
+	i = 0;
+	j = 0;
 	if (s1 != NULL)
 	{
-		while (s1[len1] != '\0')
-			len1++;
+		while (*(s1 + i) != '\0')
+			i++;
 	}
-
 	if (s2 != NULL)
 	{
-		while (s2[len2] != '\0')
-			len2++;
+		while (*(s2 + j) != '\0')
+			j++;
 	}
 
-	new_str = malloc(sizeof(char) * (len1 + len2 + 1));
-	if (new_str == NULL)
+	size = i + j + 1;
+	str = malloc(size * sizeof(char));
+	if (str == NULL)
 		return (NULL);
-
-	for (i = 0; i < len1; i++)
-		new_str[i] = s1[i];
-
-	for (j = 0; j < len2; j++)
+	k = 0;
+	while (k < i)
 	{
-		new_str[i] = s2[j];
-		i++;
+		str[k] = s1[k];
+		k++;
 	}
 
-	new_str[i] = '\0';
-	return (new_str);
+	j = 0;
+	while ((k + j) < size)
+	{
+		str[k + j] = s2[j];
+		j++;
+	}
+	str[k + j] = '\0';
+	return (str);
 }
