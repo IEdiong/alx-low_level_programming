@@ -10,7 +10,7 @@
 
 char *_strdup(char *str)
 {
-	char *s;
+	char *new_str;
 	unsigned int i;
 	unsigned int size;
 
@@ -25,18 +25,17 @@ char *_strdup(char *str)
 	}
 
 	size++;
-	s = malloc(size * sizeof(char));
-	if (s == NULL)
+	new_str = malloc(size * sizeof(char));
+	if (new_str == NULL)
 		return (NULL);
 
 	i = 0;
 	while (i < size)
 	{
-		*(s + i) = *(str + i);
+		*(new_str + i) = *(str + i);
 		i++;
 	}
 
 
-	return (s);
+	return (new_str);
 }
-
