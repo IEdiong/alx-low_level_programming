@@ -162,27 +162,35 @@ A function that returns a pointer to a 2 dimensional array of integers.
 #include <stdlib.h>
 
 /**
- * str_concat - Concatenates two strings.
- * @s1: first string
- * @s2: second string
+ * alloc_grid - creates a two dim array of integers
+ * @width: number of column
+ * @height: number of rows
  *
- * Return: pointer to the newly allocated space in memory which
- * contains the contents of s1 followed by the contents of s2 and
- * null terminated. Otherwise NULL, if on failure.
+ * Return: pointer to a new matrix. Otherwise NULL
  */
-
 int **alloc_grid(int width, int height)
 {
-	unsigned int i, j, size;
+	int i, j;
 	int **grid;
 
 	if (width < 1 || height < 1)
 		return (NULL);
 
-	size = width * height;
-	grid = malloc(size * sizeof(int));
+	grid = (int **)malloc(height * sizeof(int *));
 	if (grid == NULL)
 		return (NULL);
+
+	for (i = 0; i < height; i++)
+	{
+		grid[i] = malloc(width * sizeof(int));
+		if (grid[i] == NULL)
+		{
+			free(grid);
+			for (j = 0; j <= i; j++)
+				free(grid[j]);
+			return (NULL);
+		}
+	}
 
 	for (i = 0; i < height; i++)
 	{
@@ -193,5 +201,7 @@ int **alloc_grid(int width, int height)
 	return (grid);
 }
 ```
+
+> The trick is to first create a double pointer that points to an array of pointers. Then loop through each pointer and make them point to an array of int.
 
 Actual solution in [3-alloc_grid.c](./3-alloc_grid.c)
