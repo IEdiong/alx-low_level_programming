@@ -271,6 +271,8 @@ char *argstostr(int ac, char **av)
 			str[i] = av[arg][byte];
 			i++;
 		}
+		str[i] = '\n';
+		i++;
 	}
 
 	str[size] = '\0';
