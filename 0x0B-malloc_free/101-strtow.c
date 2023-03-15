@@ -90,7 +90,7 @@ char **strtow(char *str)
 		}
 
 		for (j = 0; j < letters; j++)
-			strings[i][j] = str[k];
+			strings[i][j] = str[k++];
 
 		strings[i][j] = '\0';
 	}
