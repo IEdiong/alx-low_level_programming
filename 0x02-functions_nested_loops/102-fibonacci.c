@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	unsigned long long curr, prev, sum;
+	long int curr, prev, sum;
 	int i;
 
 	printf("1, 2, ");
@@ -17,7 +17,7 @@ int main(void)
 	for (i = 2; i < 50; i++)
 	{
 		sum = curr + prev;
-		printf("%llu", sum);
+		printf("%ld", sum);
 		prev = curr;
 		curr = sum;
 
