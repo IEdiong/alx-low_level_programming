@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 
 /**
  * main - prints the sume of all the multiples
  *	  of 3 or 5 below 1024 (excluded)
- * Return: On success 1.
+ * Return: On success 0.
  */
 int main(void)
 {
@@ -16,5 +18,5 @@ int main(void)
 	}
 
 	printf("%d\n", sum);
-	return (1);
+	return (EXIT_SUCCESS);
 }
