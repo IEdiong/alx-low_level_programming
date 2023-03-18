@@ -89,3 +89,29 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 ```
 
 Actual solution in [1-string_nconcat.c](./1-string_nconcat.c)
+
+## 2. _calloc
+
+A function that allocates memory for an array.
+
+```
+void *_calloc(unsigned in nmeb, unsigned int size)
+{
+	char *ptr;
+	unsigned int i;
+
+	if (nmeb == 0 || size == 0)
+		return (NULL);
+
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+
+	for (i = 0; i < nmemb * size; i++)
+		ptr[i] = 0;
+
+	return (ptr);
+}
+```
+
+Actual solution in [2-calloc.c](./2-calloc.c)
