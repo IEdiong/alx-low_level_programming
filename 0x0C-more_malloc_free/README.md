@@ -115,3 +115,31 @@ void *_calloc(unsigned in nmeb, unsigned int size)
 ```
 
 Actual solution in [2-calloc.c](./2-calloc.c)
+
+
+## 3. array_range
+
+A function that creates an array of integers.
+
+```
+int *array_range(int min, int max)
+{
+	int *arr;
+	int i, size;
+
+	if (min > max)
+		return (NULL);
+
+	size = max - min + 1;
+	arr = malloc(size * sizeof(int));
+	if (arr == NULL)
+		return (NULL);
+
+	for (i = 0; i < size; i++)
+		arr[i] = min + i;
+
+	return (arr);
+}
+```
+
+Actual solution in [3-array_range.c](./3-array_range.c)
