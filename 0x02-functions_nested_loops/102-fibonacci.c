@@ -8,13 +8,18 @@
  */
 int main(void)
 {
-	int i, sum;
+	unsigned long long curr, prev, sum;
+	int i;
 
-	sum = 1;
-	for (i = 0; i < 50; i++)
+	printf("1, 2, ");
+	prev = 1;
+	curr = 2;
+	for (i = 2; i < 50; i++)
 	{
-		sum += i;
-		printf("%d", sum);
+		sum = curr + prev;
+		printf("%llu", sum);
+		prev = curr;
+		curr = sum;
 
 		if (i != 49)
 			printf(", ");
