@@ -5,8 +5,10 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
+	char *s;
 	void (*ptr)(char *);
 
-	ptr = f;
-	ptr(name);
+	s = name;
+	ptr = &f;
+	ptr(s);
 }
