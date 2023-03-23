@@ -43,5 +43,5 @@ int main(int argc, char *argv[])
 	}
 	printf("%d\n", opr(arg1, arg2));
 
-	return (EXIT_SUCCESS);
+	return (0);
 }
