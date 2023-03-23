@@ -27,21 +27,19 @@ int main(int argc, char *argv[])
 
 	opr = get_op_func(argv[2]);
 
-	if (!opr)
+	if (!opr || argv[2][1])
 	{
 		printf("Error\n");
 		exit(99);
 	}
-
-	o = *argv[2];
 	arg1 = atoi(argv[1]);
 	arg2 = atoi(argv[3]);
+	o = *argv[2];
 	if (((o == '/') || (o == '%')) && (arg2 == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
 	printf("%d\n", opr(arg1, arg2));
-
 	return (0);
 }
