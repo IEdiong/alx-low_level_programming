@@ -16,6 +16,7 @@
 int main(int argc, char *argv[])
 {
 	int arg1, arg2;
+	char o;
 	int (* opr)(int, int);
 
 	if (argc != 4)
@@ -32,9 +33,10 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
+	o = *argv[2];
 	arg1 = atoi(argv[1]);
 	arg2 = atoi(argv[3]);
-	if ((!strcmp(argv[2], "/") || !strcmp(argv[2], "%")) && (arg2 == 0))
+	if (((o == '/') || (o == '%')) && (arg2 == 0))
 	{
 		printf("Error\n");
 		exit(100);
