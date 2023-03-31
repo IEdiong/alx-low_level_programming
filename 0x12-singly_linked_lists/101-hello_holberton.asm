@@ -1,18 +1,27 @@
+;--------------------------------------------------------------------------------------
+;
+; A 64-bit program in assembly that prints Hello, Holberton, followed by a new line.
+; Compiled using nasm and gcc.
+; nasm -f elf64 101-hello_holberton.asm && gcc 101-hello_holberton.o -o hello
+;
+;--------------------------------------------------------------------------------------
+
 section .data
-	hello db 'Hello, Holberton', 0Ah ; 0Ah is a new line character
+format db "%s", 10, 0
+message db "Hello, Holberton", 0
 
 section .text
-	global _start
+extern printf ;C function to be called
+global main ;main function
 
-_start:
-	; write the string to stdout
-	mov eax, 4 ; system call for write
-	mov ebx, 1 ; file descriptor for stdout
-	mov ecx, hello ; string to write
-	mov edx, 16 ; number of bytes to write
-	int 0x80 ; call kernel
+main:
+	push rbp
+	mov rdi, format
+	mov rsi, message
+	mov rax, 0 ;can be xor rax, rax
+	call printf ;call C function.
 
-	; exit program with status code 0
-	mov eax, 1 ; system call for exit
-	xor ebx, ebx ; return status code 0
-	int 0x80 ; call kernel
+	pop rbp ;restor stack
+
+	mov rax, 0 ;normal, no error, return value
+	ret ;return
