@@ -17,7 +17,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *dummy_node;
 	unsigned int i;
 
-	if (*head == NULL)
+	if (head == NULL)
 		return (NULL);
 
 	dummy_node = *head;
