@@ -22,7 +22,7 @@ void print_binary(unsigned long int n)
 	while (i >= 0)
 	{
 		sum = n >> i;
-		printf("%lu", sum & 1);
+		_putchar((sum & 1) + '0');
 		i--;
 	}
 }
