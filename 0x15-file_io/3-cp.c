@@ -26,8 +26,8 @@ void close_file(int fd)
  */
 int main(int argc, char *argv[])
 {
-	int flags1, flags2, fd1, fd2;
-	char *buf[1024];
+	int fd1, fd2;
+	char buf[1024];
 	ssize_t read_count, write_count;
 
 	if (argc != 3)
@@ -36,17 +36,13 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	/* flags */
-	flags1 = O_RDONLY;
-	flags2 = O_CREAT | O_WRONLY | O_TRUNC;
-
 	/* file descriptors */
-	fd1 = open(argv[1], flags1);
-	fd2 = open(argv[2], flags2, 0664);
+	fd1 = open(argv[1], O_RDONLY);
+	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	/* Try to read from FILE_FROM */
-	while ((read_count = read(fd1, buf, 1024)) > 0)
-	{
+	read_count = read(fd1, buf, 1024)
+	do {
 		if (fd1 == -1 || read_count == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -60,7 +56,9 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
-	}
+		read_count = read(fd1, buf, 1024);
+		fd2 = open(argv[2], O_WRONLY | O_APPEND, read_count);
+	} while (read_count > 0);
 
 	/* close files */
 	close_file(fd1);
