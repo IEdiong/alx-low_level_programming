@@ -1,6 +1,25 @@
 #include "main.h"
 
 /**
+ * close_file - closes a file
+ * @fd: file descriptor
+ *
+ * Return: status code.
+ */
+int close_file(int fd)
+{
+	int close_count;
+
+	/* close all files */
+	close_count = close(fd);
+	if (close_count == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+
+/**
  * main - Copies content of a file to a new file
  * @argc: arguments count
  * @argv: arguments vector
@@ -9,8 +28,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int flags1, flags2, fd1, fd2, close_count1, close_count2;
-	mode_t mode;
+	int flags1, flags2, fd1, fd2;
 	char *buf[1024];
 	ssize_t read_count, write_count;
 
@@ -24,12 +42,9 @@ int main(int argc, char *argv[])
 	flags1 = O_RDONLY;
 	flags2 = O_CREAT | O_WRONLY | O_TRUNC;
 
-	/* permission mode for the newly created file */
-	mode = 0664;
-
 	/* file descriptors */
 	fd1 = open(argv[1], flags1);
-	fd2 = open(argv[2], flags2, mode);
+	fd2 = open(argv[2], flags2, 0664);
 
 	/* Try to read from FILE_FROM */
 	read_count = read(fd1, buf, 1024);
@@ -47,19 +62,8 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	/* close all files */
-	close_count1 = close(fd1);
-	close_count2 = close(fd2);
-	if (close_count1 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
-		exit(100);
-	}
-	if (close_count2 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
-		exit(100);
-	}
-
+	/* close files */
+	close_file(fd1);
+	close_file(fd2);
 	return (1);
 }
