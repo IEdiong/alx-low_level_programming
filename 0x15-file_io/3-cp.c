@@ -3,10 +3,8 @@
 /**
  * close_file - closes a file
  * @fd: file descriptor
- *
- * Return: status code.
  */
-int close_file(int fd)
+void close_file(int fd)
 {
 	int close_count;
 
