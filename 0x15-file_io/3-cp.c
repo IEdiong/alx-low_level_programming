@@ -44,21 +44,23 @@ int main(int argc, char *argv[])
 	fd1 = open(argv[1], flags1);
 	fd2 = open(argv[2], flags2, 0664);
 
-	/* Try to read from FILE_FROM */
-	read_count = read(fd1, buf, 1024);
-	if (fd1 == -1 || read_count == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+	do {
+		/* Try to read from FILE_FROM */
+		read_count = read(fd1, buf, 1024);
+		if (fd1 == -1 || read_count == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
 
-	/* Try to write to FILE_TO */
-	write_count = write(fd2, buf, read_count);
-	if (fd2 == -1 || write_count == -1 || write_count != read_count)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+		/* Try to write to FILE_TO */
+		write_count = write(fd2, buf, read_count);
+		if (fd2 == -1 || write_count == -1 || write_count != read_count)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+	} while (read_count > 0);
 
 	/* close files */
 	close_file(fd1);
