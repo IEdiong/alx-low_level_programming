@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	/* Try to read from FILE_FROM */
-	read_count = read(fd1, buf, 1024)
+	read_count = read(fd1, buf, 1024);
 	do {
 		if (fd1 == -1 || read_count == -1)
 		{
