@@ -44,9 +44,9 @@ int main(int argc, char *argv[])
 	fd1 = open(argv[1], flags1);
 	fd2 = open(argv[2], flags2, 0664);
 
-	do {
-		/* Try to read from FILE_FROM */
-		read_count = read(fd1, buf, 1024);
+	/* Try to read from FILE_FROM */
+	while ((read_count = read(fd1, buf, 1024)) > 0)
+	{
 		if (fd1 == -1 || read_count == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
-	} while (read_count > 0);
+	}
 
 	/* close files */
 	close_file(fd1);
